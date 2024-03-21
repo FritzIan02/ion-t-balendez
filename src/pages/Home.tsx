@@ -11,7 +11,7 @@ import {
       <IonPage>
         <IonHeader>
           <IonToolbar>
-            <IonTitle>Home</IonTitle>
+            <IonTitle>Home ni sha bay</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent fullscreen>
