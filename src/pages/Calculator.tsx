@@ -43,71 +43,71 @@ const Calculator: React.FC = () => {
 
           <IonRow>
             <IonCol size="6">
-              <IonButton id="btns" expand="full" color="light" onClick={handleClear}>C</IonButton>
+              <IonButton id="btns" expand="full" color="danger" onClick={handleClear}>C</IonButton>
             </IonCol>
             <IonCol size="6">
-              <IonButton id="btns" expand="full" color="light" onClick={handleDelete}>DEL</IonButton>
+              <IonButton id="btns" expand="full" color="success" onClick={handleDelete}>DEL</IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
             <IonCol size="3">
-              <IonButton id="btns" expand="full" color="light" onClick={() => handleInput('7')}>7</IonButton>
+              <IonButton id="btns" expand="full" color="warning" onClick={() => handleInput('7')}>7</IonButton>
             </IonCol>
             <IonCol size="3">
-              <IonButton id="btns" expand="full" color="light" onClick={() => handleInput('8')}>8</IonButton>
+              <IonButton id="btns" expand="full" color="warning" onClick={() => handleInput('8')}>8</IonButton>
             </IonCol>
             <IonCol size="3">
-              <IonButton id="btns" expand="full" color="light" onClick={() => handleInput('9')}>9</IonButton>
+              <IonButton id="btns" expand="full" color="warning" onClick={() => handleInput('9')}>9</IonButton>
             </IonCol>
             <IonCol size="3">
-              <IonButton id="btns" expand="full" color="light" onClick={() => handleInput('/')}>/</IonButton>
-            </IonCol>
-          </IonRow>
-          <IonRow>
-            <IonCol size="3">
-              <IonButton id="btns" expand="full" color="light" onClick={() => handleInput('4')}>4</IonButton>
-            </IonCol>
-            <IonCol size="3">
-              <IonButton id="btns" expand="full" color="light" onClick={() => handleInput('5')}>5</IonButton>
-            </IonCol>
-            <IonCol size="3">
-              <IonButton id="btns" expand="full" color="light" onClick={() => handleInput('6')}>6</IonButton>
-            </IonCol>
-            <IonCol size="3">
-              <IonButton id="btns" expand="full" color="light" onClick={() => handleInput('*')}>*</IonButton>
+              <IonButton id="btns" expand="full" color="primary" onClick={() => handleInput('/')}>/</IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
             <IonCol size="3">
-              <IonButton id="btns" expand="full" color="light" onClick={() => handleInput('1')}>1</IonButton>
+              <IonButton id="btns" expand="full" color="warning" onClick={() => handleInput('4')}>4</IonButton>
             </IonCol>
             <IonCol size="3">
-              <IonButton id="btns" expand="full" color="light" onClick={() => handleInput('2')}>2</IonButton>
+              <IonButton id="btns" expand="full" color="warning" onClick={() => handleInput('5')}>5</IonButton>
             </IonCol>
             <IonCol size="3">
-              <IonButton id="btns" expand="full" color="light" onClick={() => handleInput('3')}>3</IonButton>
+              <IonButton id="btns" expand="full" color="warning" onClick={() => handleInput('6')}>6</IonButton>
             </IonCol>
             <IonCol size="3">
-              <IonButton id="btns" expand="full" color="light" onClick={() => handleInput('-')}>-</IonButton>
+              <IonButton id="btns" expand="full" color="primary" onClick={() => handleInput('*')}>*</IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
             <IonCol size="3">
-              <IonButton id="btns" expand="full" color="light" onClick={() => handleInput('.')}>.</IonButton>
+              <IonButton id="btns" expand="full" color="warning" onClick={() => handleInput('1')}>1</IonButton>
             </IonCol>
             <IonCol size="3">
-              <IonButton id="btns" expand="full" color="light" onClick={() => handleInput('0')}>0</IonButton>
+              <IonButton id="btns" expand="full" color="warning" onClick={() => handleInput('2')}>2</IonButton>
             </IonCol>
             <IonCol size="3">
-              <IonButton id="btns" expand="full" color="light" onClick={() => handleInput('00')}>00</IonButton>
+              <IonButton id="btns" expand="full" color="warning" onClick={() => handleInput('3')}>3</IonButton>
             </IonCol>
             <IonCol size="3">
-              <IonButton id="btns" expand="full" color="light" onClick={() => handleInput('+')}>+</IonButton>
+              <IonButton id="btns" expand="full" color="primary" onClick={() => handleInput('-')}>-</IonButton>
+            </IonCol>
+          </IonRow>
+          <IonRow>
+            <IonCol size="3">
+              <IonButton id="btns" expand="full" color="primary" onClick={() => handleInput('.')}>.</IonButton>
+            </IonCol>
+            <IonCol size="3">
+              <IonButton id="btns" expand="full" color="warning" onClick={() => handleInput('0')}>0</IonButton>
+            </IonCol>
+            <IonCol size="3">
+              <IonButton id="btns" expand="full" color="warning" onClick={() => handleInput('00')}>00</IonButton>
+            </IonCol>
+            <IonCol size="3">
+              <IonButton id="btns" expand="full" color="primary" onClick={() => handleInput('+')}>+</IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
             <IonCol size="12">
-              <IonButton id="btns" expand="full" color="light" onClick={handleCalculate}>=</IonButton>
+              <IonButton id="btns" expand="full" color="secondary" onClick={handleCalculate}>=</IonButton>
             </IonCol>
           </IonRow>
         </IonGrid>
