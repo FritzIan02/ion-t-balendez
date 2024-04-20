@@ -8,7 +8,6 @@ import {
   IonTabButton,
   IonTabs,
   setupIonicReact
-  
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { home, calculatorOutline, ellipse, fingerPrintOutline, personCircleOutline, square, triangle, closeOutline } from 'ionicons/icons';
@@ -16,7 +15,7 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Click_counter from './pages/Clickcounter';
 import Calculator from './pages/Calculator';
-import Tab4 from './pages/Tab4';
+import Todolist from './pages/Todolist';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -44,6 +43,7 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
+          
           <Route exact path="/">
             <Redirect to="/home" />
           </Route>
@@ -51,22 +51,18 @@ const App: React.FC = () => (
             <Home />
           </Route>
 
-          {/* 
-          <Route exact path="/profile">
-            <Profile />
-          </Route>
+          
           <Route exact path="/click_counter">
             <Click_counter />
           </Route>
-          */}
-          <Route path="/calculator">
+          <Route exact path="/calculator">
             <Calculator />
           </Route>
-
-
-          <Route exact path="/click_counter">
-            <Click_counter />
+          <Route exact path="/todolist">
+            <Todolist />
           </Route>
+
+
           <Route exact path="/profile">
             <Profile />
           </Route>
@@ -92,14 +88,13 @@ const App: React.FC = () => (
             <IonLabel>Calculator</IonLabel>
           </IonTabButton>
         */}
-          
-          <IonTabButton tab="tab4" href="/tab4">
+
+          <IonTabButton tab="Tab4" href="Tab4">
             <IonIcon aria-hidden="true" icon={closeOutline} />
             <IonLabel>Blank</IonLabel>
           </IonTabButton>
-        
 
-          
+
           <IonTabButton tab="profile" href="/profile">
             <IonIcon aria-hidden="true" icon={personCircleOutline} />
             <IonLabel>Profile</IonLabel>
