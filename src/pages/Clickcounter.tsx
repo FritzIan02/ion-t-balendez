@@ -24,12 +24,12 @@ const Click_counter: React.FC = () => {
         <IonGrid>
           <IonRow>
             <IonCol size="12" className="ion-text-center">
-              <p>Click the button to increase the count:</p>
+              <p>Click the button</p>
             </IonCol>
           </IonRow>
           <IonRow>
             <IonCol size="12" className="ion-text-center">
-              <IonButton onClick={incrementCounter}>Click Me</IonButton>
+              <IonButton color= "light" onClick={incrementCounter}>Click Me</IonButton>
             </IonCol>
           </IonRow>
           <IonRow>
@@ -39,7 +39,7 @@ const Click_counter: React.FC = () => {
           </IonRow>
           <IonRow>
             <IonCol size="12" className="ion-text-center">
-              <IonButton onClick={resetCounter}>Reset</IonButton>
+              <IonButton color= "light" onClick={resetCounter}>Reset</IonButton>
             </IonCol>
           </IonRow>
         </IonGrid>
