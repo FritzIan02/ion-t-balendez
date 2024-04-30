@@ -1,0 +1,7 @@
+{
+  "name": "ion-t-balendez",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
