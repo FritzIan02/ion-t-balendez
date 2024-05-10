@@ -42,7 +42,7 @@ const cardData = [
     title: 'Click Counter',
     icon: speedometerOutline,
     subtitle: 'Applet #1',
-    link: '/clickcounter',
+    link: '/ion-t-balendez/clickcounter',
     tags: {
       tag1: logoIonic,
       tag2: logoReact
@@ -53,7 +53,7 @@ const cardData = [
     title: 'Calculator',
     icon: calculator,
     subtitle: 'Applet #2',
-    link: '/calculator',
+    link: '/ion-t-balendez/calculator',
     tags: {
       tag1: logoIonic,
       tag2: logoReact
@@ -63,7 +63,7 @@ const cardData = [
     title: 'To Do List',
     icon: pencil,
     subtitle: 'Applet #3',
-    link: '/todolist',
+    link: '/ion-t-balendez/todolist',
     tags: {
       tag1: logoIonic,
       tag2: logoReact
@@ -73,7 +73,7 @@ const cardData = [
     title: 'Quote Generator',
     icon: chatbubble,
     subtitle: 'Applet #4',
-    link: '/quotesgenerator',
+    link: '/ion-t-balendez/quotesgenerator',
     tags: {
       tag1: logoIonic,
       tag2: logoReact
@@ -83,7 +83,7 @@ const cardData = [
     title: 'Notes',
     icon: readerOutline,
     subtitle: 'Applet #5',
-    link: '/notes',
+    link: '/ion-t-balendez/notes',
     tags: {
       tag1: logoIonic,
       tag2: logoReact, 
