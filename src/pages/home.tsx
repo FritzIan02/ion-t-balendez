@@ -1,68 +1,149 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import {
+  IonBackButton,
+  IonButton,
+  IonButtons,
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardSubtitle,
+  IonCardTitle,
+  IonCol,
   IonContent,
+  IonGrid,
   IonHeader,
+  IonIcon,
+  IonInput,
+  IonItem,
+  IonLabel,
+  IonList,
   IonPage,
+  IonRow,
   IonTitle,
   IonToolbar,
-  IonList,
-  IonItem,
-  IonAvatar,
-  IonTextarea,
-  IonButton,
-  IonIcon,
-  IonFooter,
-  IonText,
+  IonItemDivider,
+  IonSearchbar,
+  IonBadge
 } from '@ionic/react';
-import { camera, videocam, albums, notifications, chatbox, person } from 'ionicons/icons';
-import './home.css';
 
-const Home: React.FC = () => {
-  return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Home</IonTitle>
-        </IonToolbar>
-        
-        
-      </IonHeader>
-      <IonContent fullscreen>
-        {/* Post Section */}
-        <IonList>
-          {/* Post Status */}
-          <IonItem>
-            <IonAvatar slot="start">
-              <img src="../ion-t-balendez/src/Assets/Img/Fritz.jpg" />
-            </IonAvatar>
-            <IonTextarea auto-grow placeholder="What's on your mind?" />
-          </IonItem>
-          
+//Custom CSS
+import './Home.css';
 
-        </IonList>
+//Ionic Icons
+import { speedometerOutline,calculator,pencil, chatbubble, logoIonic, logoReact, logoFirebase, readerOutline} from 'ionicons/icons';
 
-        
-        <IonFooter>
+//Additional Routes
+// import Click_counter from './Click_counter';
+
+
+const cardData = [
+  {
+    title: 'Click Counter',
+    icon: speedometerOutline,
+    subtitle: 'Applet #1',
+    link: '/clickcounter',
+    tags: {
+      tag1: logoIonic,
+      tag2: logoReact
+    }
+
+  },
+  {
+    title: 'Calculator',
+    icon: calculator,
+    subtitle: 'Applet #2',
+    link: '/calculator',
+    tags: {
+      tag1: logoIonic,
+      tag2: logoReact
+    }
+  },
+  {
+    title: 'To Do List',
+    icon: pencil,
+    subtitle: 'Applet #3',
+    link: '/todolist',
+    tags: {
+      tag1: logoIonic,
+      tag2: logoReact
+    }
+  },
+  {
+    title: 'Quote Generator',
+    icon: chatbubble,
+    subtitle: 'Applet #4',
+    link: '/quotesgenerator',
+    tags: {
+      tag1: logoIonic,
+      tag2: logoReact
+    }
+  },
+  {
+    title: 'Notes',
+    icon: readerOutline,
+    subtitle: 'Applet #5',
+    link: '/notes',
+    tags: {
+      tag1: logoIonic,
+      tag2: logoReact, 
+      tag3: logoFirebase 
+    }
+  }
+  
+];
+
+  const Home: React.FC = () => {
+
+    {/*Dynamic Search*/}
+    const [searchTerm, setSearchTerm] = useState<string>('');
+
+    return (
+      <IonPage className="home-page">
+        <IonHeader>
           <IonToolbar>
-            <IonButton color="danger" slot="start">
-              <IonIcon icon={camera} />
-              <IonText>Photos</IonText>
-            </IonButton>
-            <IonButton color="success" slot="start">
-              <IonIcon icon={videocam} />
-              <IonText>Videos</IonText>
-            </IonButton>
-            <IonButton color="success" slot="start">
-              <IonIcon icon={albums} />
-              <IonText>Reels</IonText>
-            </IonButton>
+            <IonTitle>Home</IonTitle>
           </IonToolbar>
-          Hello World<br></br>THIS IS MY HOME PAGE
-        </IonFooter>
-
-      </IonContent>
-    </IonPage>
-  );
-};
-
-export default Home;
+        </IonHeader>
+        <IonContent fullscreen className="home-content">
+          <IonHeader collapse="condense">
+            <IonToolbar>
+              <IonTitle size="large">Home</IonTitle>
+            </IonToolbar>
+          </IonHeader>
+        {/*Dynamic Search*/}
+        <>
+          <IonSearchbar 
+            value={searchTerm} 
+            onIonInput={(e) => setSearchTerm(e.target.value ?? '')} 
+          />
+          
+          {cardData
+            .filter((card) => card.title.toLowerCase().includes(searchTerm.toLowerCase()))
+            .map((card, index) => (
+              <IonCard key={index} routerLink={card.link} routerDirection='forward' id="card_body">
+                <IonCardHeader>
+                  <IonCardTitle>
+                    <IonGrid>
+                      <IonRow>
+                        <IonCol push=".75">
+                          <IonIcon className="home-card-icon" icon={card.icon} />
+                        </IonCol>
+                        <IonCol pull='3'>
+                          <div className="home-card-title">{card.title}</div>
+                          <IonCardSubtitle>{card.subtitle}</IonCardSubtitle>
+                        </IonCol>
+                      </IonRow>
+                    </IonGrid>
+                  </IonCardTitle>
+                </IonCardHeader>
+              </IonCard>
+          ))}
+        </>
+          </IonContent>
+        </IonPage>
+    );
+  };
+  
+  //
+  export default Home;

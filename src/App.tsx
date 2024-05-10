@@ -10,23 +10,32 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { calculatorOutline, fingerPrintOutline, homeOutline, personOutline } from 'ionicons/icons';
+import { home, calculatorOutline, ellipse, fingerPrintOutline, personCircleOutline, square, triangle } from 'ionicons/icons';
+import Home from './pages/Home';
 import Profile from './pages/Profile';
-import Click_counter from './pages/Clickcounter';
+import ClickCounter from './pages/ClickCounter';
 import Calculator from './pages/Calculator';
-import Home from './pages/home';
+import Todolist from './pages/Todolist/Todolist';
+import QuotesGenerator from './pages/QuotesGenerator/QuotesGenerator';
+import Notes from './pages/Notes/Notes';
 
-// Import CSS files
+/* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
+
+/* Basic CSS for apps built with Ionic */
 import '@ionic/react/css/normalize.css';
 import '@ionic/react/css/structure.css';
 import '@ionic/react/css/typography.css';
+
+/* Optional CSS utils that can be commented out */
 import '@ionic/react/css/padding.css';
 import '@ionic/react/css/float-elements.css';
 import '@ionic/react/css/text-alignment.css';
 import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
+
+/* Theme variables */
 import './theme/variables.css';
 
 setupIonicReact();
@@ -36,8 +45,25 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
+          
+          <Route exact path="/clickcounter">
+            <ClickCounter />
+          </Route>
+          <Route exact path="/calculator">
+            <Calculator />
+          </Route>
+          <Route exact path="/todolist">
+            <Todolist />
+          </Route>
+          <Route exact path="/quotesgenerator">
+            <QuotesGenerator />
+          </Route>
+          <Route exact path="/notes">
+            <Notes />
+          </Route>
+
           <Route exact path="/">
-            <Redirect to="/home"/>
+            <Redirect to="/home" />
           </Route>
           <Route exact path="/home">
             <Home />
@@ -45,30 +71,39 @@ const App: React.FC = () => (
           <Route exact path="/profile">
             <Profile />
           </Route>
-          <Route exact path="/click_counter">
-            <Click_counter />
-          </Route>
-          <Route exact path="/calculator">
-            <Calculator />
-          </Route>
+
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
+
           <IonTabButton tab="home" href="/home">
-            <IonIcon icon={homeOutline} />
+            <IonIcon aria-hidden="true" icon={home} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
+          
+          {/*
           <IonTabButton tab="profile" href="/profile">
-            <IonIcon icon={personOutline} />
+            <IonIcon aria-hidden="true" icon={personCircleOutline} />
             <IonLabel>Profile</IonLabel>
           </IonTabButton>
           <IonTabButton tab="click_counter" href="/click_counter">
-            <IonIcon icon={fingerPrintOutline} />
+            <IonIcon aria-hidden="true" icon={fingerPrintOutline} />
             <IonLabel>Click Counter</IonLabel>
           </IonTabButton>
           <IonTabButton tab="calculator" href="/calculator">
-            <IonIcon icon={calculatorOutline} />
+            <IonIcon aria-hidden="true" icon={calculatorOutline} />
             <IonLabel>Calculator</IonLabel>
           </IonTabButton>
+          */}
+
+          <IonTabButton tab="" href="">
+            <IonIcon aria-hidden="true" />
+            <IonLabel></IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="profile" href="/profile">
+            <IonIcon aria-hidden="true" icon={personCircleOutline} />
+            <IonLabel>Profile</IonLabel>
+          </IonTabButton>
+
         </IonTabBar>
       </IonTabs>
     </IonReactRouter>
