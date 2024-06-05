@@ -1,15 +1,4 @@
-.horizontal-list {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between; /* Adjust as per your need */
-    padding: 0; /* Optional: Remove default padding */
+.card-img {
+    height: 200px;
+    objectFit: 'cover';
   }
-
-.circular-button {
-  border-radius: 50%;
-}
-
-/* #profile{
-    width: 20px;
-} */
-  

@@ -28,7 +28,7 @@ import {
 } from '@ionic/react';
 
 //Custom CSS
-import './home.css';
+import './Home.css';
 
 //Ionic Icons
 import { speedometerOutline,calculator,pencil, chatbubble, logoIonic, logoReact, logoFirebase, readerOutline} from 'ionicons/icons';
@@ -39,6 +39,7 @@ import { speedometerOutline,calculator,pencil, chatbubble, logoIonic, logoReact,
 
 const cardData = [
   {
+    img:'',
     title: 'Click Counter',
     icon: speedometerOutline,
     subtitle: 'Applet #1',
@@ -50,6 +51,7 @@ const cardData = [
 
   },
   {
+    img:'./Assets/img/1.jpg',
     title: 'Calculator',
     icon: calculator,
     subtitle: 'Applet #2',
@@ -60,6 +62,7 @@ const cardData = [
     }
   },
   {
+    img:'./Assets/img/1.jpg',
     title: 'To Do List',
     icon: pencil,
     subtitle: 'Applet #3',
@@ -70,6 +73,7 @@ const cardData = [
     }
   },
   {
+    img:'./Assets/img/1.jpg',
     title: 'Quote Generator',
     icon: chatbubble,
     subtitle: 'Applet #4',
@@ -80,6 +84,7 @@ const cardData = [
     }
   },
   {
+    img:'./Assets/img/1.jpg',
     title: 'Notes',
     icon: readerOutline,
     subtitle: 'Applet #5',
@@ -118,46 +123,30 @@ const cardData = [
             onIonInput={(e) => setSearchTerm(e.target.value ?? '')} 
           />
           
-          <IonCard>
-            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-           
-            <IonGrid>
-              <IonRow>
-                <IonCol>
-                <IonCardHeader>
-                  <IonCardTitle>Card Title</IonCardTitle>
-                  <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
-                </IonCardHeader>
-                </IonCol>
-                <IonCol size="auto">
-                  <div style={{ width: '150px', marginTop: '12px' }}>
-                <IonButton>Default</IonButton>
-              </div>
-
-                </IonCol>
-              </IonRow>
-            </IonGrid>
-            
-          </IonCard>
-
 
           {cardData
             .filter((card) => card.title.toLowerCase().includes(searchTerm.toLowerCase()))
             .map((card, index) => (
               <IonCard key={index} routerLink={card.link} routerDirection='forward' id="card_body">
+                <img className="card-img" alt="Silhouette of mountains" src="{card.img}" style={{ height: '200px', width: '500px', objectFit: 'cover' }} />
                 <IonCardHeader>
                   <IonCardTitle>
-                    <IonGrid>
-                      <IonRow>
-                        <IonCol push=".75">
-                          <IonIcon className="home-card-icon" icon={card.icon} />
-                        </IonCol>
-                        <IonCol pull='3'>
-                          <div className="home-card-title">{card.title}</div>
-                          <IonCardSubtitle>{card.subtitle}</IonCardSubtitle>
-                        </IonCol>
-                      </IonRow>
-                    </IonGrid>
+                  <IonGrid>
+              <IonRow>
+                <IonCol>
+                <IonCardHeader>
+                  <IonCardTitle>{card.title}</IonCardTitle>
+                  <IonCardSubtitle>{card.subtitle}</IonCardSubtitle>
+                </IonCardHeader>
+                </IonCol>
+                <IonCol size="auto">
+                  <div style={{ width: '150px', marginTop: '12px' }}>
+                <IonButton>View</IonButton>
+              </div>
+                </IonCol>
+              </IonRow>
+            </IonGrid>
+            
                   </IonCardTitle>
                 </IonCardHeader>
               </IonCard>
