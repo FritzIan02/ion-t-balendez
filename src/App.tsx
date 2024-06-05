@@ -11,9 +11,9 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { home, calculatorOutline, ellipse, fingerPrintOutline, personCircleOutline, square, triangle } from 'ionicons/icons';
-import Home from './pages/Home';
+import Home from './pages/home';
 import Profile from './pages/Profile';
-import ClickCounter from './pages/ClickCounter';
+import ClickCounter from './pages/Clickcounter';
 import Calculator from './pages/Calculator';
 import Todolist from './pages/Todolist/Todolist';
 import QuotesGenerator from './pages/QuotesGenerator/QuotesGenerator';

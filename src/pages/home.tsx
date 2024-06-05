@@ -28,7 +28,7 @@ import {
 } from '@ionic/react';
 
 //Custom CSS
-import './Home.css';
+import './home.css';
 
 //Ionic Icons
 import { speedometerOutline,calculator,pencil, chatbubble, logoIonic, logoReact, logoFirebase, readerOutline} from 'ionicons/icons';
@@ -118,6 +118,29 @@ const cardData = [
             onIonInput={(e) => setSearchTerm(e.target.value ?? '')} 
           />
           
+          <IonCard>
+            <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+           
+            <IonGrid>
+              <IonRow>
+                <IonCol>
+                <IonCardHeader>
+                  <IonCardTitle>Card Title</IonCardTitle>
+                  <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+                </IonCardHeader>
+                </IonCol>
+                <IonCol size="auto">
+                  <div style={{ width: '150px', marginTop: '12px' }}>
+                <IonButton>Default</IonButton>
+              </div>
+
+                </IonCol>
+              </IonRow>
+            </IonGrid>
+            
+          </IonCard>
+
+
           {cardData
             .filter((card) => card.title.toLowerCase().includes(searchTerm.toLowerCase()))
             .map((card, index) => (
