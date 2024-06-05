@@ -2,3 +2,19 @@
     height: 200px;
     objectFit: 'cover';
   }
+
+  /* home.css */
+
+.card-gradient {
+  background: linear-gradient(135deg, #444444, #000000);
+  color: white;
+}
+.img-1x1 {
+  /* position: absolute; */
+  height: 1.2in;
+  width: 1.2in;
+  object-fit: cover;
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-bottom: -10px;
+}

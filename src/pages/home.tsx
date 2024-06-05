@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import {
   IonBackButton,
@@ -27,19 +26,18 @@ import {
   IonBadge
 } from '@ionic/react';
 
-//Custom CSS
-import './Home.css';
+// Custom CSS
+import './home.css';
 
-//Ionic Icons
-import { speedometerOutline,calculator,pencil, chatbubble, logoIonic, logoReact, logoFirebase, readerOutline} from 'ionicons/icons';
+// Ionic Icons
+import { speedometerOutline, calculator, pencil, chatbubble, logoIonic, logoReact, logoFirebase, readerOutline } from 'ionicons/icons';
 
-//Additional Routes
+// Additional Routes
 // import Click_counter from './Click_counter';
-
 
 const cardData = [
   {
-    img:'',
+    img: './src/img/CLICK_COUNTER.png',
     title: 'Click Counter',
     icon: speedometerOutline,
     subtitle: 'Applet #1',
@@ -48,10 +46,9 @@ const cardData = [
       tag1: logoIonic,
       tag2: logoReact
     }
-
   },
   {
-    img:'./Assets/img/1.jpg',
+    img: './src/img/CALCULATOR.png',
     title: 'Calculator',
     icon: calculator,
     subtitle: 'Applet #2',
@@ -62,7 +59,7 @@ const cardData = [
     }
   },
   {
-    img:'./Assets/img/1.jpg',
+    img: './src/img/TODO_LIST.png',
     title: 'To Do List',
     icon: pencil,
     subtitle: 'Applet #3',
@@ -73,7 +70,7 @@ const cardData = [
     }
   },
   {
-    img:'./Assets/img/1.jpg',
+    img: './src/img/QUOTES_GENERATOR.png',
     title: 'Quote Generator',
     icon: chatbubble,
     subtitle: 'Applet #4',
@@ -84,78 +81,77 @@ const cardData = [
     }
   },
   {
-    img:'./Assets/img/1.jpg',
+    img: './src/img/NOTES.png',
     title: 'Notes',
     icon: readerOutline,
     subtitle: 'Applet #5',
     link: '/notes',
     tags: {
       tag1: logoIonic,
-      tag2: logoReact, 
-      tag3: logoFirebase 
+      tag2: logoReact,
+      tag3: logoFirebase
     }
   }
-  
 ];
 
-  const Home: React.FC = () => {
+const Home: React.FC = () => {
+  // Dynamic Search
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
-    {/*Dynamic Search*/}
-    const [searchTerm, setSearchTerm] = useState<string>('');
-
-    return (
-      <IonPage className="home-page">
-        <IonHeader>
+  return (
+    <IonPage className="home-page">
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Home</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent fullscreen className="home-content">
+        <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle>Home</IonTitle>
+            <IonTitle size="large">Home</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent fullscreen className="home-content">
-          <IonHeader collapse="condense">
-            <IonToolbar>
-              <IonTitle size="large">Home</IonTitle>
-            </IonToolbar>
-          </IonHeader>
-        {/*Dynamic Search*/}
+        {/* Dynamic Search */}
         <>
           <IonSearchbar 
             value={searchTerm} 
             onIonInput={(e) => setSearchTerm(e.target.value ?? '')} 
           />
-          
 
           {cardData
             .filter((card) => card.title.toLowerCase().includes(searchTerm.toLowerCase()))
             .map((card, index) => (
-              <IonCard key={index} routerLink={card.link} routerDirection='forward' id="card_body">
-                <img className="card-img" alt="Silhouette of mountains" src="{card.img}" style={{ height: '200px', width: '500px', objectFit: 'cover' }} />
+              <IonCard key={index} routerLink={card.link} routerDirection='forward' id="card_body" className="card-gradient">
+                <img 
+                  className="card-img img-1x1" 
+                  alt="Silhouette of mountains" 
+                  src={card.img} 
+                />
                 <IonCardHeader>
                   <IonCardTitle>
-                  <IonGrid>
-              <IonRow>
-                <IonCol>
-                <IonCardHeader>
-                  <IonCardTitle>{card.title}</IonCardTitle>
-                  <IonCardSubtitle>{card.subtitle}</IonCardSubtitle>
-                </IonCardHeader>
-                </IonCol>
-                <IonCol size="auto">
-                  <div style={{ width: '150px', marginTop: '12px' }}>
-                <IonButton>View</IonButton>
-              </div>
-                </IonCol>
-              </IonRow>
-            </IonGrid>
-            
+                    <IonGrid>
+                      <IonRow>
+                        <IonCol>
+                          <IonCardHeader>
+                            <IonCardTitle>{card.title}</IonCardTitle>
+                            <IonCardSubtitle>{card.subtitle}</IonCardSubtitle>
+                          </IonCardHeader>
+                        </IonCol>
+                        <IonCol size="auto">
+                          <div>
+                            <IonButton style={{ width: '150px', marginTop: '12px' }}>View</IonButton>
+                          </div>
+                        </IonCol>
+                      </IonRow>
+                    </IonGrid>
                   </IonCardTitle>
                 </IonCardHeader>
               </IonCard>
-          ))}
+            ))}
         </>
-          </IonContent>
-        </IonPage>
-    );
-  };
-  
-  //
-  export default Home;
+      </IonContent>
+    </IonPage>
+  );
+};
+
+export default Home;
